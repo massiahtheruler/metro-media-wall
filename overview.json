@@ -1,0 +1,96 @@
+{
+  "rootFolder": "/Users/christinemarquez/Desktop/dev-projects/personal-projects/metro-media-walls",
+  "analyzedAt": "2026-07-11T19:15:20.176Z",
+  "rootStructure": [
+    {
+      "name": "8247a32060e6d073a7ee43a9492ae652393dc2049466a420af23658fdaf9f2b0.png",
+      "type": "file",
+      "size": 2313060,
+      "lines": 9357
+    },
+    {
+      "name": "metro-media-walls-nobg.png",
+      "type": "file",
+      "size": 736848,
+      "lines": 3165
+    }
+  ],
+  "rootFileSnippets": {
+    "8247a32060e6d073a7ee43a9492ae652393dc2049466a420af23658fdaf9f2b0.png": [
+      "�PNG",
+      "\u001a",
+      "\u0000\u0000\u0000\rIHDR\u0000\u0000\u0006\u0000\u0000\u0000\u0004\u0000\b\u0002\u0000\u0000\u0000�\u0013\u0005\u0015\u0000\u0000\u0000\u0001sRGB\u0000��\u001c�\u0000\u0000\u0000PeXIfMM\u0000*\u0000\u0000\u0000\b\u0000\u0002\u0001\u0012\u0000\u0003\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000�i\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0000\u0000&\u0000\u0000\u0000\u0000\u0000\u0003�\u0001\u0000\u0003\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000�\u0002\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0000\u0006\u0000�\u0003\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000�ԯ�\u0000\u0000\u0001YiTXtXML:com.adobe.xmp\u0000\u0000\u0000\u0000\u0000<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 6.0.0\">",
+      "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">",
+      "<rdf:Description rdf:about=\"\"",
+      "xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\">",
+      "<tiff:Orientation>1</tiff:Orientation>",
+      "</rdf:Description>",
+      "</rdf:RDF>",
+      "</x:xmpmeta>"
+    ],
+    "metro-media-walls-nobg.png": [
+      "�PNG",
+      "\u001a",
+      "\u0000\u0000\u0000\rIHDR\u0000\u0000\u0006\u0000\u0000\u0000\u0004\u0000\b\u0006\u0000\u0000\u0000'q�B\u0000\u0000\u0000\u0001sRGB\u0000��\u001c�\u0000\u0000\u0000PeXIfMM\u0000*\u0000\u0000\u0000\b\u0000\u0002\u0001\u0012\u0000\u0003\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000�i\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0000\u0000&\u0000\u0000\u0000\u0000\u0000\u0003�\u0001\u0000\u0003\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000�\u0002\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0000\u0006\u0000�\u0003\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000�ԯ�\u0000\u0000\u0001YiTXtXML:com.adobe.xmp\u0000\u0000\u0000\u0000\u0000<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 6.0.0\">",
+      "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">",
+      "<rdf:Description rdf:about=\"\"",
+      "xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\">",
+      "<tiff:Orientation>1</tiff:Orientation>",
+      "</rdf:Description>",
+      "</rdf:RDF>",
+      "</x:xmpmeta>"
+    ]
+  },
+  "importantFolders": [],
+  "readmeParagraphs": {},
+  "totals": {
+    "numFiles": 2,
+    "numDirs": 0,
+    "totalSizeBytes": 3049908,
+    "totalLinesOfCode": 0
+  },
+  "fileCategories": {
+    "other": 2
+  },
+  "linesOfCodePerLanguage": {},
+  "filesPerLanguage": {},
+  "projectTypes": [],
+  "frameworks": [],
+  "entryPoints": [],
+  "ciCdTools": [],
+  "packageManagers": [],
+  "topLevelDirectories": [],
+  "detailedDirectories": [],
+  "architecturalInsights": {
+    "coreApplications": [],
+    "entryPointDetails": [],
+    "serviceArchitecture": {
+      "microservices": [],
+      "monoliths": [],
+      "libraries": []
+    },
+    "layeredArchitecture": {
+      "presentation": [],
+      "business": [],
+      "data": [],
+      "infrastructure": []
+    }
+  },
+  "largeFiles": [
+    {
+      "path": "8247a32060e6d073a7ee43a9492ae652393dc2049466a420af23658fdaf9f2b0.png",
+      "sizeMb": 2.21
+    }
+  ],
+  "dependencies": {
+    "production": [],
+    "development": [],
+    "total": 0
+  },
+  "complexity": {
+    "averageFileSize": 0,
+    "maxFileSize": 23173.529599999998,
+    "nestedDepth": 0,
+    "estimatedComplexity": "low"
+  }
+}
