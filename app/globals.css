@@ -2316,3 +2316,31 @@ textarea {
 .close-button--first-panel { position: absolute; top: 1rem; right: 1rem; z-index: 3; width: 44px; height: 44px; background: var(--limestone); box-shadow: 0 2px 12px #211d1933; }
 .estimate-summary > .fine-label, .contractor-summary > .fine-label { padding-right: 3.5rem; min-height: 2rem; }
 .close-button:focus-visible { outline: 3px solid var(--copper-deep); outline-offset: 3px; }
+
+/* Keep the entire dialog reachable, including short laptop windows. */
+.modal-book {
+  min-height: 0;
+  max-height: min(760px, calc(100dvh - 2rem));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  isolation: isolate;
+}
+.modal-book::before { inset: 0; }
+.modal-slab { min-height: 0; }
+@media (max-width: 980px) {
+  .modal-stage { padding: max(.75rem, env(safe-area-inset-top)) .75rem max(.75rem, env(safe-area-inset-bottom)); }
+  .modal-book {
+    max-height: calc(100dvh - max(.75rem, env(safe-area-inset-top)) - max(.75rem, env(safe-area-inset-bottom)));
+    grid-template-rows: max-content max-content;
+    align-content: start;
+    border-radius: 8px;
+  }
+  .modal-book > .modal-slab { overflow: visible; min-height: 0; }
+  .modal-book > .modal-slab--image {
+    height: clamp(220px, 42dvh, 420px);
+    overflow: hidden;
+  }
+  .modal-slab--image img { object-fit: contain; }
+  .modal-slab__caption { font-size: .8rem; }
+  .modal-head h2 { font-size: clamp(2rem, 6vw, 3.5rem); }
+}
