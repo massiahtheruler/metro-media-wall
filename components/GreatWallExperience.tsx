@@ -38,7 +38,7 @@ export function SiteShell({ children }: ExperienceProps) {
   return (
     <>
       <header className="site-header">
-        <Link href="/" className="brand-lockup" aria-label="Metro Media Walls home">
+        <Link href="/home" className="brand-lockup" aria-label="Metro Media Walls home">
           <span className="brand-mark">
             <Image
               src="/metro/logo-transparent.png"

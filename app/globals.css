@@ -2239,3 +2239,73 @@ textarea {
     filter: none;
   }
 }
+
+/* Homepage film and continuously looping catalog. */
+.metro-intro { width: min(1380px, calc(100% - 48px)); margin: 4rem auto 0; }
+.metro-intro__heading { display: grid; grid-template-columns: 1.35fr 1fr; gap: 3rem; align-items: end; margin: 0 0 2.4rem; }
+.metro-intro h1 { margin: .8rem 0 0; font-family: var(--font-serif), Georgia, serif; font-size: clamp(3.4rem, 6.7vw, 6.7rem); font-weight: 500; line-height: .98; letter-spacing: -.045em; }
+.metro-intro h1 em { color: var(--copper-deep); font-weight: 500; }
+.metro-intro__copy { max-width: 28rem; justify-self: end; }
+.metro-intro__copy p { color: #514a40; line-height: 1.75; margin: 0 0 1.5rem; }
+.metro-intro__film { position: relative; height: clamp(24rem, 47vw, 42rem); border-radius: 8px; overflow: hidden; background: var(--stone-900); box-shadow: var(--shadow-close); }
+.metro-intro__film video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.metro-intro__film::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, #17130ed9); pointer-events: none; }
+.metro-intro__caption { position: absolute; z-index: 1; left: 2rem; bottom: 2rem; color: #fff7ec; }
+.metro-intro__caption .fine-label { color: #efc49e; }
+.metro-intro__caption p { font-family: var(--font-serif), Georgia, serif; font-size: clamp(1.8rem, 3vw, 3rem); margin: .5rem 0 0; }
+.metro-intro__controls { position: absolute; bottom: 2rem; right: 2rem; z-index: 2; display: flex; gap: .5rem; }
+.metro-intro__controls button { border: 1px solid #f3e6d888; border-radius: 999px; color: #fff7ec; background: #201b16cf; padding: .75rem 1rem; font-size: .8rem; min-height: 44px; }
+.metro-intro__credit { margin: .8rem 0 0; font-size: .7rem; color: #514a40; }
+.metro-intro__credit a { text-decoration: underline; text-underline-offset: 3px; }
+.metro-intro__error { position: absolute; z-index: 2; top: 1rem; left: 1rem; right: 1rem; padding: 1rem; background: #211d19; color: #fff; }
+.metro-showcase { margin: 4.5rem auto 0; padding: 0 0 2rem; }
+.metro-showcase__heading { width: min(1380px, calc(100% - 48px)); margin: 0 auto 1.7rem; display: flex; justify-content: space-between; gap: 2rem; align-items: end; }
+.metro-showcase h2 { font-size: clamp(2.3rem, 4vw, 4rem); line-height: 1; margin: .5rem 0 0; }
+.metro-showcase__tools { display: flex; align-items: center; gap: 1rem; font-size: .75rem; color: #514a40; }
+.metro-showcase__tools button { padding: .7rem 1rem; min-height: 44px; border: 1px solid var(--stone-500); border-radius: 999px; color: var(--ink); background: #e6e2d899; white-space: nowrap; }
+.metro-showcase__viewport { overflow-x: auto; scrollbar-width: thin; }
+.metro-showcase__track { display: flex; width: max-content; animation: metro-catalog-drift 70s linear infinite; }
+.metro-showcase__group { display: flex; gap: 20px; padding-right: 20px; }
+.metro-showcase__card { display: block; flex: 0 0 340px; width: 340px; border: 1px solid #514a402b; border-radius: 8px; overflow: hidden; background: #e6e2d8; }
+.metro-showcase__image { position: relative; height: 340px; overflow: hidden; }
+.metro-showcase__image img { object-fit: cover; transition: transform 400ms ease; }
+.metro-showcase__card:hover img { transform: scale(1.035); }
+.metro-showcase__label { padding: 1.1rem 1.2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.metro-showcase__label .fine-label { font-size: .62rem; margin: 0 0 .35rem; }
+.metro-showcase__label h3 { font-size: 1.8rem; margin: 0; }
+.metro-showcase__label > span { font-size: 1.4rem; color: var(--copper-deep); }
+.metro-showcase__viewport:hover .metro-showcase__track,
+.metro-showcase__viewport:focus-within .metro-showcase__track,
+.metro-showcase__viewport[data-paused="true"] .metro-showcase__track { animation-play-state: paused; }
+.metro-showcase a:focus-visible, .metro-showcase button:focus-visible, .metro-showcase__viewport:focus-visible, .metro-intro button:focus-visible { outline: 3px solid var(--copper-deep); outline-offset: -4px; }
+@keyframes metro-catalog-drift { to { transform: translateX(-50%); } }
+@media (max-width: 800px) {
+  .metro-intro__heading { grid-template-columns: 1fr; gap: 1.5rem; }
+  .metro-intro__copy { justify-self: start; max-width: 36rem; }
+  .metro-showcase__heading { flex-direction: column; align-items: start; gap: 1.2rem; }
+}
+@media (max-width: 640px) {
+  .metro-intro { width: calc(100% - 24px); margin-top: 2.5rem; }
+  .metro-intro h1 { font-size: clamp(3rem, 12vw, 4.6rem); }
+  .metro-intro__film { height: 30rem; }
+  .metro-intro__caption { left: 1.2rem; bottom: 5.7rem; }
+  .metro-intro__controls { left: 1.2rem; right: auto; bottom: 1.2rem; }
+  .metro-showcase__heading { width: calc(100% - 24px); }
+  .metro-showcase__tools { flex-wrap: wrap; }
+  .metro-showcase__card { flex-basis: 78vw; width: 78vw; }
+  .metro-showcase__image { height: 78vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .metro-showcase__track { animation: none !important; }
+  .metro-showcase__group[aria-hidden="true"] { display: none; }
+  .metro-showcase__card:hover img { transform: none; }
+}
+.metro-consultation { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 6vw, 6rem); width: min(1180px, calc(100% - 48px)); margin: 4.5rem auto 0; padding: 2.5rem 0; border-top: 1px solid var(--edge); border-bottom: 1px solid var(--edge); }
+.metro-consultation h2 { margin: .7rem 0 1rem; font-size: clamp(2.5rem, 4vw, 3.8rem); line-height: 1; }
+.metro-consultation h3 { font-size: 2.8rem; line-height: 1; margin: .7rem 0 1rem; }
+.metro-consultation p:not(.fine-label) { color: #514a40; line-height: 1.8; max-width: 36rem; }
+.metro-consultation__booking { padding: 1.7rem; background: #eee9df80; border: 1px solid var(--edge); border-radius: 8px; align-self: center; }
+.metro-consultation__booking .stone-button { margin-top: .7rem; gap: 1rem; }
+@media(max-width: 800px) { .metro-consultation { grid-template-columns: 1fr; width: calc(100% - 24px); margin-top: 3rem; } }
+.metro-intro__enter { display: flex; justify-content: center; margin: 1rem 1rem 4rem; }
+.metro-intro__enter .stone-button { gap: 1rem; }
