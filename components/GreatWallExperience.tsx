@@ -170,7 +170,13 @@ export function ProductCard({
   onSelect: (item: GalleryItem) => void;
 }) {
   return (
-    <article className="product-card">
+    <article
+      className="product-card"
+      onClick={(event) => {
+        if ((event.target as HTMLElement).closest("button, a")) return;
+        onSelect(item);
+      }}
+    >
       <button
         type="button"
         className="product-card__media"
@@ -237,6 +243,9 @@ export function ItemModal({
       <button className={`modal-scrim ${isOpen ? "is-open" : "is-closing"}`} onClick={onClose} aria-label="Close details" />
       <div className="modal-book">
         <section className={`modal-slab modal-slab--image ${isOpen ? "stone-left-in" : "stone-left-out"}`}>
+          <button type="button" className="close-button close-button--first-panel" onClick={onClose} aria-label="Close details">
+            x
+          </button>
           <Image src={item.gallery?.[0] ?? item.image} alt={item.title} fill sizes="50vw" />
           <div className="modal-slab__caption">
             <span>{item.label}</span>
@@ -368,6 +377,9 @@ export function EstimateModal({
       <button className={`modal-scrim ${isOpen ? "is-open" : "is-closing"}`} onClick={onClose} aria-label="Close estimate form" />
       <form className="modal-book estimate-book" onSubmit={handleSubmit}>
         <section className={`modal-slab estimate-summary ${isOpen ? "stone-left-in" : "stone-left-out"}`}>
+          <button type="button" className="close-button close-button--first-panel" onClick={onClose} aria-label="Close estimate form">
+            x
+          </button>
           <div className="monogram-watermark">
             <Image src="/metro/logo-transparent.png" alt="" fill sizes="220px" />
           </div>
@@ -526,6 +538,9 @@ export function ContractorModal({
       <button className={`modal-scrim ${isOpen ? "is-open" : "is-closing"}`} onClick={onClose} aria-label="Close contractor form" />
       <form className="modal-book contractor-book" onSubmit={handleSubmit}>
         <section className={`modal-slab contractor-summary ${isOpen ? "stone-left-in" : "stone-left-out"}`}>
+          <button type="button" className="close-button close-button--first-panel" onClick={onClose} aria-label="Close contractor form">
+            x
+          </button>
           <div className="monogram-watermark">
             <Image src="/metro/logo-transparent.png" alt="" fill sizes="220px" />
           </div>

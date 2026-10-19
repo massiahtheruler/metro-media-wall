@@ -2309,3 +2309,10 @@ textarea {
 @media(max-width: 800px) { .metro-consultation { grid-template-columns: 1fr; width: calc(100% - 24px); margin-top: 3rem; } }
 .metro-intro__enter { display: flex; justify-content: center; margin: 1rem 1rem 4rem; }
 .metro-intro__enter .stone-button { gap: 1rem; }
+
+/* Whole-card pointer target; existing buttons retain keyboard activation. */
+.product-card { cursor: pointer; }
+.product-card:focus-within { outline: 2px solid var(--copper-deep); outline-offset: 3px; }
+.close-button--first-panel { position: absolute; top: 1rem; right: 1rem; z-index: 3; width: 44px; height: 44px; background: var(--limestone); box-shadow: 0 2px 12px #211d1933; }
+.estimate-summary > .fine-label, .contractor-summary > .fine-label { padding-right: 3.5rem; min-height: 2rem; }
+.close-button:focus-visible { outline: 3px solid var(--copper-deep); outline-offset: 3px; }
