@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import FireplaceOffer from "@/components/FireplaceOffer";
 import { bookingOptions } from "@/lib/bookingOptions";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -52,6 +53,9 @@ export default function HomeIntro({ models }: { models: IntroModel[] }) {
         </div>
         <p className="metro-intro__credit">Showcase film: <a href="https://timelesscontracting.com/texas-media-walls/" target="_blank" rel="noreferrer">Timeless Contracting ↗</a></p>
       </section>
+      <div className="fireplace-offer-wrap">
+        <FireplaceOffer />
+      </div>
       <section className="metro-consultation" aria-labelledby="consultation-heading">
         <div className="metro-consultation__intro">
           <p className="fine-label">Designed for the way you live</p>

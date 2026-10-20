@@ -118,6 +118,48 @@ export default function Home() {
         </div>
       </RevealSection>
 
+      <RevealSection className="section-shell investor-section" delay={150}>
+        <div className="investor-section__heading">
+          <p className="fine-label">Developers &amp; real estate investors</p>
+          <h2>Design decisions made with the return in mind.</h2>
+          <p>
+            Turn an ordinary room into a stronger selling or leasing moment
+            with a feature buyers can see immediately. Metro helps development
+            teams plan the scope, control the finish package, and repeat the
+            right design across one property or an entire portfolio.
+          </p>
+          <a href="#estimate" className="stone-button">
+            Discuss a Development
+          </a>
+        </div>
+        <div className="investor-value-grid">
+          <article>
+            <span>01</span>
+            <h3>Stronger market appeal</h3>
+            <p>
+              Create a finished focal point that photographs well and helps a
+              listing stand apart.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Controlled project scope</h3>
+            <p>
+              Start with repeatable models, defined options, and measured
+              planning before installation begins.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Portfolio-ready execution</h3>
+            <p>
+              Coordinate design, materials, and installation for a single
+              renovation or multiple units.
+            </p>
+          </article>
+        </div>
+      </RevealSection>
+
       <RevealSection className="section-shell network-section" delay={160}>
         <div className="network-section__copy">
           <p className="fine-label">Installer network</p>

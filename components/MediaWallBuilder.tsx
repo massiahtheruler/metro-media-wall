@@ -1,6 +1,7 @@
 "use client";
 
 import BookingOptions from "@/components/BookingOptions";
+import FireplaceOffer from "@/components/FireplaceOffer";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import { FormEvent, useRef, useState } from "react";
@@ -239,6 +240,7 @@ export default function MediaWallBuilder() {
             <span>Estimated total</span>
             <strong>{formatEstimatePrice(total)}</strong>
           </div>
+          <FireplaceOffer compact />
           <button
             type="button"
             className="stone-button"

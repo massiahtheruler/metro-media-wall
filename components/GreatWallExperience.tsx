@@ -1,6 +1,7 @@
 "use client";
 
 import BookingOptions from "@/components/BookingOptions";
+import FireplaceOffer from "@/components/FireplaceOffer";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import Link from "next/link";
@@ -394,6 +395,7 @@ export function EstimateModal({
             <span>Planning range</span>
             <strong>{activeItem.price}</strong>
           </div>
+          <FireplaceOffer compact />
           <div className="addon-list">
             {addOns.map((addOn) => (
               <label key={addOn} className="addon-check">
@@ -549,6 +551,14 @@ export function ContractorModal({
           <p className="fine-label">{contractorProgram.eyebrow}</p>
           <h2>{contractorProgram.heading}</h2>
           <p>{contractorProgram.summary}</p>
+          <div className="contractor-discounts" aria-label="Contractor discounts">
+            {contractorProgram.discounts.map((discount) => (
+              <div key={discount.label}>
+                <strong>{discount.amount}</strong>
+                <span>{discount.label}</span>
+              </div>
+            ))}
+          </div>
           <div className="contractor-benefits">
             {contractorProgram.benefits.map((benefit) => (
               <span key={benefit}>{benefit}</span>
@@ -572,6 +582,13 @@ export function ContractorModal({
           </div>
           <p className="modal-description">{contractorProgram.closing}</p>
           <input type="hidden" name="signup_type" value="Contractor network" />
+          <input
+            type="hidden"
+            name="contractor_discounts"
+            value={contractorProgram.discounts
+              .map((discount) => `${discount.amount} ${discount.label}`)
+              .join("; ")}
+          />
           <div className="form-grid">
             <label>
               Name
