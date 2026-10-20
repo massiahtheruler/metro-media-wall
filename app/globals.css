@@ -2344,3 +2344,19 @@ textarea {
   .modal-slab__caption { font-size: .8rem; }
   .modal-head h2 { font-size: clamp(2rem, 6vw, 3.5rem); }
 }
+
+/* Consultation and design booking details. */
+.booking-services { margin: 1.5rem 0; }
+.booking-services > div { padding: .85rem 0; border-top: 1px solid var(--edge); }
+.booking-services dt { display: flex; justify-content: space-between; gap: 1rem; line-height: 1.5; }
+.booking-services dt strong { white-space: nowrap; }
+.booking-services dd { margin: .35rem 0 0; color: #514a40; font-size: .9rem; line-height: 1.6; }
+.booking-options { min-width: 0; margin: 1.25rem 0; padding: 0; border: 0; }
+.booking-options legend { margin-bottom: .75rem; font-weight: 600; }
+.booking-options .booking-options__option { display: flex; align-items: flex-start; gap: .7rem; padding: .8rem; margin-bottom: .5rem; border: 1px solid var(--edge); border-radius: 6px; cursor: pointer; }
+.booking-options .booking-options__option input { width: 1rem; height: 1rem; flex: 0 0 1rem; margin: .2rem 0 0; accent-color: #514a40; }
+.booking-options__option > span { min-width: 0; }
+.booking-options__option strong { display: block; line-height: 1.5; }
+.booking-options__option span span { display: block; margin-top: .25rem; font-size: .85rem; line-height: 1.6; color: #514a40; }
+.booking-options__option:has(input:checked) { background: #eee9df; border-color: #514a40; }
+.booking-options__option:focus-within { outline: 2px solid #514a40; outline-offset: 2px; }

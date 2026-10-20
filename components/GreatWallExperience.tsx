@@ -1,5 +1,6 @@
 "use client";
 
+import BookingOptions from "@/components/BookingOptions";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import Link from "next/link";
@@ -451,6 +452,7 @@ export function EstimateModal({
               </select>
             </label>
           </div>
+          <BookingOptions />
           <label className="message-field">
             Notes
             <textarea

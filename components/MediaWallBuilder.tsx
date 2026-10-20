@@ -1,5 +1,6 @@
 "use client";
 
+import BookingOptions from "@/components/BookingOptions";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import { FormEvent, useRef, useState } from "react";
@@ -17,7 +18,7 @@ import {
 
 const defaultOptionIds: BuilderOptionId[] = ["soundbar"];
 const trustPoints = [
-  "Free consultation",
+  "Free 30-minute phone consultation",
   "Metro-managed installation",
   "Custom built for your home",
   "Service areas expanding by market",
@@ -362,14 +363,7 @@ export default function MediaWallBuilder() {
             </label>
           </div>
 
-          <label className="builder-consultation-check">
-            <input
-              type="checkbox"
-              name="in_home_consultation"
-              value="Yes"
-            />
-            <span>I&apos;m interested in an in-home consultation.</span>
-          </label>
+          <BookingOptions />
 
           <button
             className="stone-button"

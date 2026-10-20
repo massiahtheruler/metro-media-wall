@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { bookingOptions } from "@/lib/bookingOptions";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { GalleryItem } from "@/lib/catalog";
@@ -61,6 +62,14 @@ export default function HomeIntro({ models }: { models: IntroModel[] }) {
           <p className="fine-label">Let’s talk through your options</p>
           <h3 id="consultation-heading">Not sure where to start?</h3>
           <p>You don’t need a design picked out. Tell us about your space, style, and budget. We’ll help you compare options and find what works for your room.</p>
+          <dl className="booking-services">
+            {bookingOptions.map((option) => (
+              <div key={option.id}>
+                <dt>{option.title} <strong>{option.price}</strong></dt>
+                <dd>{option.details}</dd>
+              </div>
+            ))}
+          </dl>
           <a href="#estimate" className="stone-button">Schedule a consultation <span aria-hidden="true">↗</span></a>
         </div>
       </section>
