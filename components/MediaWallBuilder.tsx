@@ -23,7 +23,7 @@ const trustPoints = [
   "Free 30-minute phone consultation",
   "Metro-managed installation",
   "Custom built for your home",
-  "Service areas expanding by market",
+  "Ask about service in your area",
 ];
 
 export default function MediaWallBuilder() {
@@ -126,7 +126,7 @@ export default function MediaWallBuilder() {
       <div className="builder-preview-panel">
         <div className="builder-preview-panel__heading">
           <div>
-            <p className="fine-label">Live blueprint</p>
+            <p className="fine-label">Layout preview</p>
             <h2>{selectedModel.name}</h2>
           </div>
           <strong>{formatEstimatePrice(total)}</strong>
@@ -138,8 +138,8 @@ export default function MediaWallBuilder() {
         />
 
         <p className="builder-disclaimer">
-          Starter estimate only. Final quote still depends on room measurements,
-          electrical needs, material choices, and install conditions.
+          This is a planning estimate. Your final quote depends on room measurements,
+          electrical work, materials, and installation requirements.
         </p>
 
         <button
@@ -147,7 +147,7 @@ export default function MediaWallBuilder() {
           className="stone-button builder-preview-cta"
           onClick={focusQuoteForm}
         >
-          Request My Quote
+          Request my quote
         </button>
       </div>
 
@@ -216,7 +216,7 @@ export default function MediaWallBuilder() {
           aria-label="Estimate summary"
         >
           <div className="builder-total-card__intro">
-            <span>Estimated Starting Price</span>
+            <span>Estimated starting price</span>
             <strong>{formatEstimatePrice(total)}</strong>
           </div>
           <p>
@@ -247,11 +247,11 @@ export default function MediaWallBuilder() {
             className="stone-button"
             onClick={focusQuoteForm}
           >
-            Get My Exact Quote
+            Request my quote
           </button>
           <p className="builder-urgency">
-            Schedule your consultation today. Most projects are measured within
-            a few days.
+            Share your selections and we’ll discuss measurements, availability,
+            and next steps.
           </p>
         </section>
 
@@ -270,7 +270,7 @@ export default function MediaWallBuilder() {
         >
           <div className="builder-control-group__heading">
             <p className="fine-label">{proofProject.eyebrow}</p>
-            <h3 id="recent-installations-heading">Recent install match</h3>
+            <h3 id="recent-installations-heading">See a similar design</h3>
           </div>
           <figure className="builder-installation-card">
             <Image
@@ -293,7 +293,7 @@ export default function MediaWallBuilder() {
           onSubmit={handleSubmit}
         >
           <div className="builder-control-group__heading">
-            <p className="fine-label">Ready for an exact quote?</p>
+            <p className="fine-label">Request a quote for your room</p>
           </div>
           <input
             type="hidden"
@@ -336,7 +336,7 @@ export default function MediaWallBuilder() {
                 name="phone"
                 required
                 autoComplete="tel"
-                placeholder="Best number"
+                placeholder="Your phone number"
               />
             </label>
             <label>
@@ -350,7 +350,7 @@ export default function MediaWallBuilder() {
               />
             </label>
             <label>
-              Project Address
+              Project address
               <input
                 name="project_address"
                 autoComplete="street-address"
@@ -358,7 +358,7 @@ export default function MediaWallBuilder() {
               />
             </label>
             <label>
-              Room Width
+              Room width (include units)
               <input
                 name="room_width"
                 inputMode="decimal"
@@ -374,19 +374,18 @@ export default function MediaWallBuilder() {
             type="submit"
             disabled={formStatus === "sending"}
           >
-            {formStatus === "sending" ? "Sending..." : "Request My Quote"}
+            {formStatus === "sending" ? "Sending..." : "Request my quote"}
           </button>
 
           {formStatus === "sent" && (
             <p className="form-note">
-              Thanks. We&apos;ll reach out within one business day to discuss
-              your project and provide your full quote.
+              Request received. We’ll contact you to discuss your room,
+              confirm the details, and prepare your quote.
             </p>
           )}
           {formStatus === "fallback" && (
             <p className="form-note">
-              Email delivery is not configured yet, so an email draft opened
-              with this project summary.
+              Your request hasn’t been sent. If an email draft opened, send it from your email app. Otherwise, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with your project details.
             </p>
           )}
         </form>
@@ -593,8 +592,8 @@ function BlueprintPreview({
         </g>
       </svg>
       <figcaption>
-        SVG pieces are conditionally rendered from the same state that powers
-        the subtotal.
+        Your preview and estimate update as you choose options.
+        The illustration is a guide; final dimensions are confirmed during planning.
       </figcaption>
     </figure>
   );

@@ -2,7 +2,7 @@ export const contractorProgram = {
   eyebrow: "Contractor network",
   heading: "Join the Metro installation network",
   summary:
-    "We are building a serious installer lane for crews that know how to finish clean, communicate well, and represent the brand the right way.",
+    "We’re looking for skilled crews who deliver careful finishes, communicate clearly, and take care of the customer’s home.",
   discounts: [
     { amount: "10% off", label: "Legend Flame fireplaces" },
     {
@@ -17,5 +17,5 @@ export const contractorProgram = {
   ],
   awards: ["Best in Show", "Most Installed", "Highest Rated", "Cleanest Finish"],
   closing:
-    "Sign up for review. Approved contractor partners receive program pricing and access to upcoming Metro-managed installs.",
+    "Tell us where you work. Approved partners receive program pricing and access to upcoming Metro installation opportunities.",
 };

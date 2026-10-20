@@ -15,9 +15,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Metro Media Walls | Custom Media Walls and Fire-Led Showrooms",
+  title: "Metro Media Walls | Custom Media Walls & Built-Ins",
   description:
-    "Metro Media Walls creates custom media walls, digital fireplaces, centerpieces, tables, and gathering spaces with a warm luxury showroom feel.",
+    "Explore custom media walls, electric fireplaces, and built-ins. Compare models, plan your estimate, or book a consultation with Metro Media Walls.",
 };
 
 export default function RootLayout({

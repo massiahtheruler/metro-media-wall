@@ -37,10 +37,10 @@ export default async function DetailPage({
           </div>
           <div className="hero__actions">
             <a href="#estimate" className="stone-button">
-              Start Estimate
+              Request an estimate
             </a>
             <Link href="/featured" className="ghost-button">
-              Back to Featured
+              Back to models
             </Link>
           </div>
         </div>
@@ -49,7 +49,7 @@ export default async function DetailPage({
       <RevealSection className="section-shell detail-columns">
         <section>
           <p className="fine-label">Included</p>
-          <h2>Built like a real room feature.</h2>
+          <h2>What’s included.</h2>
           <ul className="detail-list">
             {item.included.map((detail) => (
               <li key={detail}>{detail}</li>
@@ -80,8 +80,8 @@ export default async function DetailPage({
 
       <RevealSection className="section-shell">
         <div className="section-heading">
-          <p className="fine-label">Related directions</p>
-          <h2>Compare the next closest models.</h2>
+          <p className="fine-label">More models</p>
+          <h2>Explore more media walls.</h2>
         </div>
         <ProductGallery items={related} />
       </RevealSection>

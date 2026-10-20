@@ -9,11 +9,11 @@ export default function DiscoverPage() {
       <RevealSection className="subpage-hero subpage-hero--split">
         <div>
           <p className="fine-label">Discovery</p>
-          <h1>Custom inspiration for rooms that need a measured hand.</h1>
+          <h1>A custom design starts with your room.</h1>
           <p>
-            Discovery is where the fixed model stops and the client’s real room
-            starts. We use reference images, finishes, add-ons, and family use
-            patterns to shape the quote.
+            Explore ideas for your space, then share the styles and details
+            you like. We’ll use your references, room measurements, and
+            finish choices to help plan the project.
           </p>
         </div>
         <div className="subpage-hero__image">

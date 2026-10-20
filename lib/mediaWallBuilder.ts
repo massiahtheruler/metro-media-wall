@@ -47,7 +47,7 @@ export const builderModels: BuilderModel[] = [
   {
     id: "bp1",
     name: "Metro Apex",
-    description: "The clean foundational media wall with TV prep and a centered fireplace opening.",
+    description: "A simple media wall with TV mount preparation and a centered fireplace opening.",
     basePrice: 3500,
     widthInches: 96,
     heightInches: 96,
@@ -58,7 +58,7 @@ export const builderModels: BuilderModel[] = [
   {
     id: "bp2",
     name: "Metro Summit",
-    description: "A taller fireplace wall for rooms that need more height and stronger presence.",
+    description: "A taller fireplace wall for rooms with higher ceilings.",
     basePrice: 4000,
     widthInches: 108,
     heightInches: 108,
@@ -69,7 +69,7 @@ export const builderModels: BuilderModel[] = [
   {
     id: "bp4",
     name: "Metro Gallery",
-    description: "The wider statement starting point with room for shelving and cabinet decisions.",
+    description: "A wider media wall with space for optional shelving and cabinets.",
     basePrice: 5000,
     widthInches: 120,
     heightInches: 96,
@@ -92,46 +92,46 @@ export const builderOptions: BuilderOption[] = [
     label: "Floating mantel",
     group: "Layout",
     price: 650,
-    description: "Adds a shelf line between the TV area and the fireplace.",
+    description: "Adds a floating shelf between the TV and fireplace.",
   },
   {
     id: "sideShelves",
     label: "Side shelves",
     group: "Layout",
     price: 900,
-    description: "Adds open shelving zones on both sides of the media wall.",
+    description: "Adds open shelving on both sides of the media wall.",
   },
   {
     id: "lowerCabinets",
     label: "Lower cabinets",
     group: "Layout",
     price: 1200,
-    description: "Adds a storage run below the wall composition.",
+    description: "Adds storage cabinets along the base of the wall.",
   },
   {
     id: "ledLighting",
     label: "LED lighting",
     group: "Electrical",
     price: 450,
-    description: "Adds accent lighting lines for the shelves or wall face.",
+    description: "Adds accent lighting for the shelves or wall.",
   },
   {
     id: "premiumFinish",
     label: "Premium finish",
     group: "Finish",
     price: 750,
-    description: "Represents upgraded paint, texture, or finish consultation.",
+    description: "Allows for upgraded paint, texture, or finish consultation.",
   },
 ];
 
 const builderProofProjects: Record<"basic" | "mantel" | "shelves", BuilderProofProject> = {
   basic: {
     title: "Stone fireplace wall",
-    eyebrow: "Selected proof",
+    eyebrow: "Design inspiration",
     image: "/great-wall/models/bp2-main.jpg",
     alt: "Completed stone media wall with fireplace and TV recess",
     description:
-      "A clean stone-forward wall that shows the base fireplace direction without extra shelving.",
+      "A stone fireplace wall showing a simple layout without side shelving.",
   },
   mantel: {
     title: "Mantel feature wall",
@@ -139,7 +139,7 @@ const builderProofProjects: Record<"basic" | "mantel" | "shelves", BuilderProofP
     image: "/great-wall/models/bp1-mantel.png",
     alt: "Completed media wall with mantel and fireplace detail",
     description:
-      "A warmer mantel profile that gives the wall a stronger shelf line and finished family-room feel.",
+      "A mantel adds definition between the TV and fireplace, with space for display.",
   },
   shelves: {
     title: "Built-in shelving layout",
@@ -147,7 +147,7 @@ const builderProofProjects: Record<"basic" | "mantel" | "shelves", BuilderProofP
     image: "/great-wall/models/bp4-s2.jpg",
     alt: "Completed media wall with side shelves and a fireplace",
     description:
-      "A shelf-ready install with more display space. Shelving takes priority when multiple layout upgrades are selected.",
+      "Side shelving creates space for books, artwork, and everyday storage.",
   },
 };
 

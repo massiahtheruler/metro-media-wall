@@ -6,11 +6,11 @@ export default function BuilderPage() {
     <main className="subpage builder-page">
       <RevealSection className="subpage-hero builder-hero">
         <p className="fine-label">Model estimator</p>
-        <h1>Build a media wall estimate from simple choices.</h1>
+        <h1>Plan your media wall. See your estimate.</h1>
         <p>
-          Design your custom media wall. Select your preferred model,
-          customize it with available upgrades, and receive an estimated
-          project cost before requesting your exact quote.
+          Choose a model and add upgrades to see how they affect the layout
+          and estimated price. Share your selections with us for a quote
+          based on your room and installation needs.
         </p>
       </RevealSection>
 

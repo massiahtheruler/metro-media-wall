@@ -49,7 +49,7 @@ export default function HomeIntro({ models }: { models: IntroModel[] }) {
             <button type="button" disabled={videoError} aria-label={muted ? "Unmute showcase video" : "Mute showcase video"} onClick={() => setMuted(value => !value)}>{muted ? "Sound off" : "Sound on"}</button>
             <button type="button" disabled={videoError} onClick={() => { if (video.current?.paused) video.current.play().catch(() => setVideoError(true)); else video.current?.pause(); }}>{playing ? "Pause video" : "Play video"}</button>
           </div>
-          {videoError ? <p className="metro-intro__error" role="status">The film is unavailable. Explore our wall models below.</p> : null}
+          {videoError ? <p className="metro-intro__error" role="status">The video is unavailable. You can still browse our models below.</p> : null}
         </div>
         <p className="metro-intro__credit">Showcase film: <a href="https://timelesscontracting.com/texas-media-walls/" target="_blank" rel="noreferrer">Timeless Contracting ↗</a></p>
       </section>
@@ -60,7 +60,7 @@ export default function HomeIntro({ models }: { models: IntroModel[] }) {
         <div className="metro-consultation__intro">
           <p className="fine-label">Designed for the way you live</p>
           <h2>One wall.<br />A room that works.</h2>
-          <p>Give your screen a place, your storage a purpose, and your room a finished look. Start with a featured model, then explore the finishes, shelving, and fireplace options that suit your space.</p>
+          <p>Bring your TV, shelving, and fireplace together in a design that fits your room. Start with a model, then choose the finishes and options that work for you.</p>
         </div>
         <div className="metro-consultation__booking">
           <p className="fine-label">Let’s talk through your options</p>
@@ -74,7 +74,7 @@ export default function HomeIntro({ models }: { models: IntroModel[] }) {
               </div>
             ))}
           </dl>
-          <a href="#estimate" className="stone-button">Schedule a consultation <span aria-hidden="true">↗</span></a>
+          <a href="#estimate" className="stone-button">Request a consultation <span aria-hidden="true">↗</span></a>
         </div>
       </section>
       <section className="metro-showcase" aria-labelledby="showcase-heading">

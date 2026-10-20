@@ -1,7 +1,13 @@
 {
   "rootFolder": "/Users/christinemarquez/Desktop/dev-projects/personal-projects/metro-media-walls",
-  "analyzedAt": "2026-07-11T19:15:20.176Z",
+  "analyzedAt": "2026-10-20T20:15:15.453Z",
   "rootStructure": [
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "size": 480,
+      "lines": 42
+    },
     {
       "name": "8247a32060e6d073a7ee43a9492ae652393dc2049466a420af23658fdaf9f2b0.png",
       "type": "file",
@@ -9,10 +15,106 @@
       "lines": 9357
     },
     {
+      "name": "AGENTS.md",
+      "type": "file",
+      "size": 327,
+      "lines": 6
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "file",
+      "size": 11,
+      "lines": 2
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "size": 1469,
+      "lines": 38
+    },
+    {
+      "name": "app",
+      "type": "dir"
+    },
+    {
+      "name": "components",
+      "type": "dir"
+    },
+    {
+      "name": "eslint.config.mjs",
+      "type": "file",
+      "size": 465,
+      "lines": 19
+    },
+    {
+      "name": "lib",
+      "type": "dir"
+    },
+    {
       "name": "metro-media-walls-nobg.png",
       "type": "file",
       "size": 736848,
       "lines": 3165
+    },
+    {
+      "name": "next-env.d.ts",
+      "type": "file",
+      "size": 247,
+      "lines": 7
+    },
+    {
+      "name": "next.config.ts",
+      "type": "file",
+      "size": 150,
+      "lines": 10
+    },
+    {
+      "name": "node_modules",
+      "type": "dir"
+    },
+    {
+      "name": "overview.json",
+      "type": "file",
+      "size": 3934,
+      "lines": 96
+    },
+    {
+      "name": "overview_architecture.puml",
+      "type": "file",
+      "size": 246,
+      "lines": 7
+    },
+    {
+      "name": "package-lock.json",
+      "type": "file",
+      "size": 233081,
+      "lines": 6715
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "size": 619,
+      "lines": 29
+    },
+    {
+      "name": "postcss.config.mjs",
+      "type": "file",
+      "size": 94,
+      "lines": 8
+    },
+    {
+      "name": "public",
+      "type": "dir"
+    },
+    {
+      "name": "tests",
+      "type": "dir"
+    },
+    {
+      "name": "tsconfig.json",
+      "type": "file",
+      "size": 666,
+      "lines": 35
     }
   ],
   "rootFileSnippets": {
@@ -28,6 +130,42 @@
       "</rdf:RDF>",
       "</x:xmpmeta>"
     ],
+    "AGENTS.md": [
+      "<!-- BEGIN:nextjs-agent-rules -->",
+      "# This is NOT the Next.js you know",
+      "",
+      "This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.",
+      "<!-- END:nextjs-agent-rules -->",
+      ""
+    ],
+    "CLAUDE.md": [
+      "@AGENTS.md",
+      ""
+    ],
+    "README.md": [
+      "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+      "",
+      "## Getting Started",
+      "",
+      "First, run the development server:",
+      "",
+      "```bash",
+      "npm run dev",
+      "# or",
+      "yarn dev"
+    ],
+    "eslint.config.mjs": [
+      "import { defineConfig, globalIgnores } from \"eslint/config\";",
+      "import nextVitals from \"eslint-config-next/core-web-vitals\";",
+      "import nextTs from \"eslint-config-next/typescript\";",
+      "",
+      "const eslintConfig = defineConfig([",
+      "...nextVitals,",
+      "...nextTs,",
+      "// Override default ignores of eslint-config-next.",
+      "globalIgnores([",
+      "// Default ignores of eslint-config-next:"
+    ],
     "metro-media-walls-nobg.png": [
       "�PNG",
       "\u001a",
@@ -39,35 +177,470 @@
       "</rdf:Description>",
       "</rdf:RDF>",
       "</x:xmpmeta>"
+    ],
+    "next-env.d.ts": [
+      "/// <reference types=\"next\" />",
+      "/// <reference types=\"next/image-types/global\" />",
+      "import \"./.next/types/routes.d.ts\";",
+      "",
+      "// NOTE: This file should not be edited",
+      "// see https://nextjs.org/docs/app/api-reference/config/typescript for more information.",
+      ""
+    ],
+    "next.config.ts": [
+      "import type { NextConfig } from \"next\";",
+      "",
+      "const nextConfig: NextConfig = {",
+      "turbopack: {",
+      "root: process.cwd(),",
+      "},",
+      "};",
+      "",
+      "export default nextConfig;",
+      ""
+    ],
+    "overview.json": [
+      "{",
+      "\"rootFolder\": \"/Users/christinemarquez/Desktop/dev-projects/personal-projects/metro-media-walls\",",
+      "\"analyzedAt\": \"2026-07-11T19:15:20.176Z\",",
+      "\"rootStructure\": [",
+      "{",
+      "\"name\": \"8247a32060e6d073a7ee43a9492ae652393dc2049466a420af23658fdaf9f2b0.png\",",
+      "\"type\": \"file\",",
+      "\"size\": 2313060,",
+      "\"lines\": 9357",
+      "},"
+    ],
+    "overview_architecture.puml": [
+      "@startuml",
+      "' Generated by SASVA Maria on 2026-07-11T19:15:20.451Z",
+      "' ERROR: Diagram generation failed",
+      "",
+      "note \"Architecture Diagram Generation Failed\\n\\nError: No chat model configured\\n\\nPlease check the logs for more details.\" as ErrorNote",
+      "",
+      "@enduml"
+    ],
+    "package-lock.json": [
+      "{",
+      "\"name\": \"metro-media-walls\",",
+      "\"version\": \"0.1.0\",",
+      "\"lockfileVersion\": 3,",
+      "\"requires\": true,",
+      "\"packages\": {",
+      "\"\": {",
+      "\"name\": \"metro-media-walls\",",
+      "\"version\": \"0.1.0\",",
+      "\"dependencies\": {"
+    ],
+    "package.json": [
+      "{",
+      "\"name\": \"metro-media-walls\",",
+      "\"version\": \"0.1.0\",",
+      "\"private\": true,",
+      "\"scripts\": {",
+      "\"dev\": \"next dev\",",
+      "\"build\": \"next build\",",
+      "\"test\": \"node --test tests/*.test.mjs\",",
+      "\"start\": \"next start\",",
+      "\"lint\": \"eslint\""
+    ],
+    "postcss.config.mjs": [
+      "const config = {",
+      "plugins: {",
+      "\"@tailwindcss/postcss\": {},",
+      "},",
+      "};",
+      "",
+      "export default config;",
+      ""
+    ],
+    "tsconfig.json": [
+      "{",
+      "\"compilerOptions\": {",
+      "\"target\": \"ES2017\",",
+      "\"lib\": [\"dom\", \"dom.iterable\", \"esnext\"],",
+      "\"allowJs\": true,",
+      "\"skipLibCheck\": true,",
+      "\"strict\": true,",
+      "\"noEmit\": true,",
+      "\"esModuleInterop\": true,",
+      "\"module\": \"esnext\","
     ]
   },
-  "importantFolders": [],
-  "readmeParagraphs": {},
+  "importantFolders": [
+    {
+      "path": "app",
+      "category": "frontend",
+      "fileCount": 10,
+      "primaryLanguage": "TypeScript"
+    },
+    {
+      "path": "app/builder",
+      "category": "frontend",
+      "fileCount": 1,
+      "primaryLanguage": "TypeScript"
+    },
+    {
+      "path": "components",
+      "category": "frontend",
+      "fileCount": 6,
+      "primaryLanguage": "TypeScript"
+    },
+    {
+      "path": "lib",
+      "category": "core",
+      "fileCount": 5,
+      "primaryLanguage": "TypeScript"
+    },
+    {
+      "path": "public",
+      "category": "assets",
+      "fileCount": 33
+    },
+    {
+      "path": "tests",
+      "category": "tests",
+      "fileCount": 2
+    }
+  ],
+  "readmeParagraphs": {
+    "root": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app)."
+  },
   "totals": {
-    "numFiles": 2,
-    "numDirs": 0,
-    "totalSizeBytes": 3049908,
-    "totalLinesOfCode": 0
+    "numFiles": 71,
+    "numDirs": 20,
+    "totalSizeBytes": 24411896,
+    "totalLinesOfCode": 2867
   },
   "fileCategories": {
-    "other": 2
+    "other": 41,
+    "documentation": 3,
+    "source": 21,
+    "config": 4,
+    "test": 2
   },
-  "linesOfCodePerLanguage": {},
-  "filesPerLanguage": {},
-  "projectTypes": [],
-  "frameworks": [],
+  "linesOfCodePerLanguage": {
+    "TypeScript": 2867
+  },
+  "filesPerLanguage": {
+    "TypeScript": 21
+  },
+  "projectTypes": [
+    "JavaScript/Node.js"
+  ],
+  "frameworks": [
+    "React",
+    "Next.js"
+  ],
   "entryPoints": [],
   "ciCdTools": [],
-  "packageManagers": [],
-  "topLevelDirectories": [],
-  "detailedDirectories": [],
+  "packageManagers": [
+    "npm/yarn"
+  ],
+  "topLevelDirectories": [
+    {
+      "name": "components",
+      "numFiles": 6,
+      "totalLoc": 1810,
+      "dominantLanguage": "TypeScript"
+    },
+    {
+      "name": "lib",
+      "numFiles": 5,
+      "totalLoc": 563,
+      "dominantLanguage": "TypeScript"
+    },
+    {
+      "name": "app",
+      "numFiles": 10,
+      "totalLoc": 477,
+      "dominantLanguage": "TypeScript"
+    },
+    {
+      "name": "public",
+      "numFiles": 33,
+      "totalLoc": 0
+    },
+    {
+      "name": "tests",
+      "numFiles": 2,
+      "totalLoc": 0
+    }
+  ],
+  "detailedDirectories": [
+    {
+      "path": "components",
+      "name": "components",
+      "level": 1,
+      "numFiles": 6,
+      "totalLoc": 1810,
+      "dominantLanguage": "TypeScript",
+      "category": "General",
+      "description": "General module with 6 files (TypeScript)",
+      "subdirectories": []
+    },
+    {
+      "path": "lib",
+      "name": "lib",
+      "level": 1,
+      "numFiles": 5,
+      "totalLoc": 563,
+      "dominantLanguage": "TypeScript",
+      "category": "Library",
+      "description": "Library module with 5 files (TypeScript)",
+      "subdirectories": []
+    },
+    {
+      "path": "app",
+      "name": "app",
+      "level": 1,
+      "numFiles": 10,
+      "totalLoc": 477,
+      "dominantLanguage": "TypeScript",
+      "category": "Application",
+      "description": "Application module with 10 files (TypeScript)",
+      "subdirectories": [
+        {
+          "path": "app/home",
+          "name": "home",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 214,
+          "dominantLanguage": "TypeScript",
+          "category": "General",
+          "description": "General module with 1 files (TypeScript)",
+          "subdirectories": []
+        },
+        {
+          "path": "app/featured",
+          "name": "featured",
+          "level": 2,
+          "numFiles": 2,
+          "totalLoc": 113,
+          "dominantLanguage": "TypeScript",
+          "category": "General",
+          "description": "General module with 2 files (TypeScript)",
+          "subdirectories": [
+            {
+              "path": "app/featured/[slug]",
+              "name": "[slug]",
+              "level": 3,
+              "numFiles": 1,
+              "totalLoc": 91,
+              "dominantLanguage": "TypeScript",
+              "category": "General",
+              "description": "General module with 1 files (TypeScript)",
+              "subdirectories": []
+            }
+          ]
+        },
+        {
+          "path": "app/options",
+          "name": "options",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 46,
+          "dominantLanguage": "TypeScript",
+          "category": "General",
+          "description": "General module with 1 files (TypeScript)",
+          "subdirectories": []
+        },
+        {
+          "path": "app/discover",
+          "name": "discover",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 34,
+          "dominantLanguage": "TypeScript",
+          "category": "General",
+          "description": "General module with 1 files (TypeScript)",
+          "subdirectories": []
+        },
+        {
+          "path": "app/builder",
+          "name": "builder",
+          "level": 2,
+          "numFiles": 1,
+          "totalLoc": 23,
+          "dominantLanguage": "TypeScript",
+          "category": "Web/UI",
+          "description": "Web/UI module with 1 files (TypeScript)",
+          "subdirectories": []
+        }
+      ]
+    },
+    {
+      "path": "public",
+      "name": "public",
+      "level": 1,
+      "numFiles": 33,
+      "totalLoc": 0,
+      "category": "General",
+      "description": "General module with 33 files",
+      "subdirectories": [
+        {
+          "path": "public/great-wall",
+          "name": "great-wall",
+          "level": 2,
+          "numFiles": 26,
+          "totalLoc": 0,
+          "category": "General",
+          "description": "General module with 26 files",
+          "subdirectories": [
+            {
+              "path": "public/great-wall/models",
+              "name": "models",
+              "level": 3,
+              "numFiles": 16,
+              "totalLoc": 0,
+              "category": "Models/Entities",
+              "description": "Models/Entities module with 16 files",
+              "subdirectories": []
+            },
+            {
+              "path": "public/great-wall/editorial",
+              "name": "editorial",
+              "level": 3,
+              "numFiles": 5,
+              "totalLoc": 0,
+              "category": "General",
+              "description": "General module with 5 files",
+              "subdirectories": []
+            },
+            {
+              "path": "public/great-wall/brand",
+              "name": "brand",
+              "level": 3,
+              "numFiles": 3,
+              "totalLoc": 0,
+              "category": "General",
+              "description": "General module with 3 files",
+              "subdirectories": []
+            },
+            {
+              "path": "public/great-wall/future",
+              "name": "future",
+              "level": 3,
+              "numFiles": 2,
+              "totalLoc": 0,
+              "category": "General",
+              "description": "General module with 2 files",
+              "subdirectories": []
+            }
+          ]
+        },
+        {
+          "path": "public/metro",
+          "name": "metro",
+          "level": 2,
+          "numFiles": 2,
+          "totalLoc": 0,
+          "category": "General",
+          "description": "General module with 2 files",
+          "subdirectories": []
+        }
+      ]
+    },
+    {
+      "path": "tests",
+      "name": "tests",
+      "level": 1,
+      "numFiles": 2,
+      "totalLoc": 0,
+      "category": "Testing",
+      "description": "Testing module with 2 files",
+      "subdirectories": []
+    }
+  ],
   "architecturalInsights": {
-    "coreApplications": [],
+    "coreApplications": [
+      {
+        "path": "app",
+        "name": "app",
+        "level": 1,
+        "numFiles": 10,
+        "totalLoc": 477,
+        "dominantLanguage": "TypeScript",
+        "category": "Application",
+        "description": "Application module with 10 files (TypeScript)",
+        "subdirectories": [
+          {
+            "path": "app/home",
+            "name": "home",
+            "level": 2,
+            "numFiles": 1,
+            "totalLoc": 214,
+            "dominantLanguage": "TypeScript",
+            "category": "General",
+            "description": "General module with 1 files (TypeScript)",
+            "subdirectories": []
+          },
+          {
+            "path": "app/featured",
+            "name": "featured",
+            "level": 2,
+            "numFiles": 2,
+            "totalLoc": 113,
+            "dominantLanguage": "TypeScript",
+            "category": "General",
+            "description": "General module with 2 files (TypeScript)",
+            "subdirectories": [
+              {
+                "path": "app/featured/[slug]",
+                "name": "[slug]",
+                "level": 3,
+                "numFiles": 1,
+                "totalLoc": 91,
+                "dominantLanguage": "TypeScript",
+                "category": "General",
+                "description": "General module with 1 files (TypeScript)",
+                "subdirectories": []
+              }
+            ]
+          },
+          {
+            "path": "app/options",
+            "name": "options",
+            "level": 2,
+            "numFiles": 1,
+            "totalLoc": 46,
+            "dominantLanguage": "TypeScript",
+            "category": "General",
+            "description": "General module with 1 files (TypeScript)",
+            "subdirectories": []
+          },
+          {
+            "path": "app/discover",
+            "name": "discover",
+            "level": 2,
+            "numFiles": 1,
+            "totalLoc": 34,
+            "dominantLanguage": "TypeScript",
+            "category": "General",
+            "description": "General module with 1 files (TypeScript)",
+            "subdirectories": []
+          },
+          {
+            "path": "app/builder",
+            "name": "builder",
+            "level": 2,
+            "numFiles": 1,
+            "totalLoc": 23,
+            "dominantLanguage": "TypeScript",
+            "category": "Web/UI",
+            "description": "Web/UI module with 1 files (TypeScript)",
+            "subdirectories": []
+          }
+        ]
+      }
+    ],
     "entryPointDetails": [],
     "serviceArchitecture": {
       "microservices": [],
       "monoliths": [],
-      "libraries": []
+      "libraries": [
+        "lib"
+      ]
     },
     "layeredArchitecture": {
       "presentation": [],
@@ -78,19 +651,74 @@
   },
   "largeFiles": [
     {
+      "path": "public/great-wall/editorial/showroom-portrait.jpeg",
+      "sizeMb": 2.69
+    },
+    {
+      "path": "public/great-wall/editorial/showroom-row.png",
+      "sizeMb": 2.63
+    },
+    {
       "path": "8247a32060e6d073a7ee43a9492ae652393dc2049466a420af23658fdaf9f2b0.png",
       "sizeMb": 2.21
+    },
+    {
+      "path": "public/metro/logo-stone.png",
+      "sizeMb": 2.21
+    },
+    {
+      "path": "public/great-wall/editorial/award-materials.png",
+      "sizeMb": 2.16
+    },
+    {
+      "path": "public/great-wall/editorial/installer-boots.png",
+      "sizeMb": 1.88
+    },
+    {
+      "path": "public/great-wall/models/bp7-main.png",
+      "sizeMb": 1.65
+    },
+    {
+      "path": "public/great-wall/models/bp3-beadboard.png",
+      "sizeMb": 1.53
+    },
+    {
+      "path": "public/great-wall/models/bp1-mantel.png",
+      "sizeMb": 1.39
     }
   ],
   "dependencies": {
-    "production": [],
-    "development": [],
-    "total": 0
+    "production": [
+      "@emailjs/browser",
+      "next",
+      "react",
+      "react-dom"
+    ],
+    "development": [
+      "@tailwindcss/postcss",
+      "@types/node",
+      "@types/react",
+      "@types/react-dom",
+      "eslint",
+      "eslint-config-next",
+      "tailwindcss",
+      "typescript"
+    ],
+    "total": 12
   },
   "complexity": {
-    "averageFileSize": 0,
-    "maxFileSize": 23173.529599999998,
+    "averageFileSize": 40.38028169014085,
+    "maxFileSize": 28206.6944,
     "nestedDepth": 0,
     "estimatedComplexity": "low"
+  },
+  "gitRepo": {
+    "firstCommitDate": "2026-10-20",
+    "totalCommits": 9,
+    "numContributors": 0,
+    "currentBranch": "main",
+    "remoteUrls": [
+      "https://github.com/massiahtheruler/metro-media-wall.git"
+    ]
   }
 }

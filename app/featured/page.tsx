@@ -7,10 +7,10 @@ export default function FeaturedPage() {
     <main className="subpage">
       <RevealSection className="subpage-hero">
         <p className="fine-label">Featured models</p>
-        <h1>Standard models with room for custom decisions.</h1>
+        <h1>Find the right starting point for your room.</h1>
         <p>
-          These are the clean starting points: priced enough to guide the
-          conversation, flexible enough to respect the room.
+          Compare media wall styles and starting prices. Explore each model
+          to see what’s included and which details you can customize.
         </p>
       </RevealSection>
       <RevealSection className="section-shell">

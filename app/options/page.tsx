@@ -6,12 +6,12 @@ export default function OptionsPage() {
   return (
     <main className="subpage">
       <RevealSection className="subpage-hero">
-        <p className="fine-label">Options / gallery</p>
-        <h1>The full brand lane, staged honestly for v1.</h1>
+        <p className="fine-label">Design options</p>
+        <h1>The details that bring your room together.</h1>
         <p>
-          Media walls are the strongest launch category. The rest of the brand
-          has a place to breathe now, then fill in as tables, centerpieces,
-          outdoor fire features, and accessories grow.
+          Explore media walls, electric fireplaces, and finishing options
+          available now, plus a preview of upcoming tables, centerpieces,
+          and outdoor fire features.
         </p>
       </RevealSection>
       <RevealSection className="section-shell">
@@ -29,11 +29,11 @@ export default function OptionsPage() {
               <p>{option.summary}</p>
               {option.status === "active" ? (
                 <a href="#estimate" className="text-link">
-                  Request direction
+                  Ask about options
                 </a>
               ) : (
                 <span className="text-link text-link--disabled" aria-disabled="true">
-                  Feature soon available
+                  Coming soon
                 </span>
               )}
             </article>

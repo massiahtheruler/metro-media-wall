@@ -82,7 +82,7 @@ export function SiteShell({ children }: ExperienceProps) {
           )}
         </nav>
         <button className="stone-button stone-button--small header-estimate-button" onClick={() => setEstimateOpen(true)}>
-          <span className="header-estimate-button__full">Start Estimate</span>
+          <span className="header-estimate-button__full">Request an estimate</span>
           <span className="header-estimate-button__short">Estimate</span>
         </button>
       </header>
@@ -97,7 +97,7 @@ export function SiteShell({ children }: ExperienceProps) {
       </button>
       {pathname === "/" ? (
         <Link href="/home" className="site-entry-fab">
-          Enter Site <span aria-hidden="true">→</span>
+          Explore Metro <span aria-hidden="true">→</span>
         </Link>
       ) : null}
       <EstimateModal
@@ -301,10 +301,10 @@ export function ItemModal({
           </div>
           <div className="modal-actions">
             <button className="stone-button" onClick={() => onEstimate(item)}>
-              Start Estimate
+              Request an estimate
             </button>
             <Link className="ghost-button" href={`/featured/${item.slug}`}>
-              View Full Details
+              View full details
             </Link>
           </div>
         </section>
@@ -401,7 +401,7 @@ export function EstimateModal({
           <div className="monogram-watermark">
             <Image src="/metro/logo-transparent.png" alt="" fill sizes="220px" />
           </div>
-          <p className="fine-label">Project builder</p>
+          <p className="fine-label">Your starting point</p>
           <h2>{activeItem.title}</h2>
           <p>{activeItem.summary}</p>
           <input type="hidden" name="selected_model" value={activeItem.title} />
@@ -430,7 +430,7 @@ export function EstimateModal({
           <div className="modal-head">
             <div>
               <p className="fine-label">Contact</p>
-              <h2>Send the idea list.</h2>
+              <h2>Tell us about your project.</h2>
             </div>
             <button type="button" className="close-button" onClick={onClose} aria-label="Close estimate form">
               x
@@ -447,7 +447,7 @@ export function EstimateModal({
             </label>
             <label>
               Phone
-              <input name="phone" placeholder="Best number" />
+              <input name="phone" placeholder="Your phone number" />
             </label>
             <label>
               City
@@ -481,10 +481,10 @@ export function EstimateModal({
             />
           </label>
           <button className="stone-button" type="submit" disabled={status === "sending"}>
-            {status === "sending" ? "Sending..." : "Request Quote"}
+            {status === "sending" ? "Sending..." : "Send request"}
           </button>
-          {status === "sent" && <p className="form-note">Request sent. We will follow up with quote details.</p>}
-          {status === "fallback" && <p className="form-note">EmailJS is not configured yet, so an email draft was opened.</p>}
+          {status === "sent" && <p className="form-note">Request received. We’ll follow up to discuss your project and next steps.</p>}
+          {status === "fallback" && <p className="form-note">Your request hasn’t been sent. If an email draft opened, send it from your email app. Otherwise, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with your project details.</p>}
         </section>
       </form>
     </div>,
@@ -590,8 +590,8 @@ export function ContractorModal({
         <section className={`modal-slab estimate-form contractor-form ${isOpen ? "stone-right-in" : "stone-right-out"}`}>
           <div className="modal-head">
             <div>
-              <p className="fine-label">Partner intake</p>
-              <h2>Get considered.</h2>
+              <p className="fine-label">Contractor application</p>
+              <h2>Apply to the network.</h2>
             </div>
             <button type="button" className="close-button" onClick={onClose} aria-label="Close contractor form">
               x
@@ -614,19 +614,19 @@ export function ContractorModal({
             </label>
             <label>
               Phone
-              <input name="phone" required autoComplete="tel" placeholder="Best number" />
+              <input name="phone" required autoComplete="tel" placeholder="Your phone number" />
             </label>
             <label>
               Email
               <input name="email" type="email" required autoComplete="email" placeholder="you@example.com" />
             </label>
             <label>
-              City, State
+              City and state
               <input name="city_state" required autoComplete="address-level2" placeholder="Newark, NJ" />
             </label>
           </div>
           <label className="message-field">
-            Operating region
+            Service area
             <textarea
               name="operating_region"
               rows={4}
@@ -635,10 +635,10 @@ export function ContractorModal({
             />
           </label>
           <button className="stone-button" type="submit" disabled={status === "sending"}>
-            {status === "sending" ? "Sending..." : "Apply to Join"}
+            {status === "sending" ? "Sending..." : "Apply to join"}
           </button>
-          {status === "sent" && <p className="form-note">Thanks. We&apos;ll review your region and reach out if there is a fit.</p>}
-          {status === "fallback" && <p className="form-note">EmailJS is not configured yet, so an email draft was opened.</p>}
+          {status === "sent" && <p className="form-note">Application received. We’ll review your service area and contact you if there’s a fit.</p>}
+          {status === "fallback" && <p className="form-note">Your request hasn’t been sent. If an email draft opened, send it from your email app. Otherwise, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with your project details.</p>}
         </section>
       </form>
     </div>,
@@ -716,16 +716,16 @@ export function InvestorModal({
             x
           </button>
           <p className="fine-label">Development partnerships</p>
-          <h2>Build the feature buyers remember.</h2>
+          <h2>Plan media walls for your properties.</h2>
           <p>
-            Metro helps developers and investors turn feature walls into a
-            repeatable property upgrade with clear design direction, measured
-            planning, and coordinated installation.
+            From a single renovation to multiple units, Metro helps you choose
+            models, define finish packages, and coordinate installation
+            around your project.
           </p>
           <div className="investor-modal-points">
             <span>Portfolio and multi-unit planning</span>
             <span>Defined models, options, and finish packages</span>
-            <span>Design-to-install coordination</span>
+            <span>Design and installation coordination</span>
           </div>
           <p className="investor-direct-contact">
             Prefer email? <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
@@ -734,7 +734,7 @@ export function InvestorModal({
         <section className={`modal-slab estimate-form investor-form ${isOpen ? "stone-right-in" : "stone-right-out"}`}>
           <div className="modal-head">
             <div>
-              <p className="fine-label">Project intake</p>
+              <p className="fine-label">Your project</p>
               <h2>Tell us what you&apos;re building.</h2>
             </div>
             <button type="button" className="close-button" onClick={onClose} aria-label="Close developer inquiry form">
@@ -758,7 +758,7 @@ export function InvestorModal({
             </label>
             <label>
               Phone
-              <input name="phone" autoComplete="tel" placeholder="Best number" />
+              <input name="phone" autoComplete="tel" placeholder="Your phone number" />
             </label>
             <label>
               Property type
@@ -775,7 +775,7 @@ export function InvestorModal({
               <input name="unit_count" inputMode="numeric" placeholder="1, 12, 50..." />
             </label>
             <label>
-              Project market
+              Project location
               <input name="project_market" required placeholder="City and state" />
             </label>
             <label>
@@ -785,19 +785,19 @@ export function InvestorModal({
                 <option>Within 30 days</option>
                 <option>1-3 months</option>
                 <option>3-6 months</option>
-                <option>Future pipeline</option>
+                <option>Still exploring</option>
               </select>
             </label>
           </div>
           <label className="message-field">
             Project goals
-            <textarea name="message" rows={4} required placeholder="Tell us about the property, scope, finish level, and what success looks like." />
+            <textarea name="message" rows={4} required placeholder="Tell us about the property, planned work, preferred finishes, and budget." />
           </label>
           <button className="stone-button" type="submit" disabled={status === "sending"}>
-            {status === "sending" ? "Sending..." : "Request a Development Call"}
+            {status === "sending" ? "Sending..." : "Request a project call"}
           </button>
           {status === "sent" && <p className="form-note">Inquiry sent. We&apos;ll follow up about the project.</p>}
-          {status === "fallback" && <p className="form-note">An email draft opened so you can send the inquiry directly.</p>}
+          {status === "fallback" && <p className="form-note">Your request hasn’t been sent. If an email draft opened, send it from your email app. Otherwise, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with your project details.</p>}
         </section>
       </form>
     </div>,
@@ -825,7 +825,7 @@ function Footer({ onEstimate }: { onEstimate: () => void }) {
         />
       </button>
       <div className="site-footer__content">
-        <p>Metro Media Walls is the customer-facing brand for fire-led rooms, crafted walls, and managed installations that feel built to last.</p>
+        <p>Custom media walls, fireplaces, and built-ins, with support from design through installation.</p>
         <nav className="footer-links" aria-label="Footer links">
           <button type="button" className="footer-link" onClick={scrollHome}>
             <FooterIcon kind="home" />
@@ -846,7 +846,7 @@ function Footer({ onEstimate }: { onEstimate: () => void }) {
         </nav>
       </div>
       <button className="stone-button" onClick={onEstimate}>
-        Start Estimate
+        Request an estimate
       </button>
     </footer>
   );

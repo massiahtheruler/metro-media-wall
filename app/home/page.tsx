@@ -22,16 +22,16 @@ export default function Home() {
 
           <div className="hero__actions">
             <a href="#estimate" className="stone-button">
-              Start an Estimate
+              Request an estimate
             </a>
             <Link href="/featured" className="ghost-button">
-              View Featured Models
+              Browse models
             </Link>
           </div>
           <p>
-            Metro Media Walls creates media walls, fireplace walls, TV feature
-            walls, built-ins, and custom gathering spaces with the kind of
-            warmth that makes a house feel settled.
+            Custom media walls, fireplace walls, and built-ins that bring your
+            TV, storage, and finishes together. Explore a model or talk with
+            us about a design for your room.
           </p>
         </div>
         <div className="hero__image">
@@ -47,11 +47,11 @@ export default function Home() {
 
       <RevealSection className="section-shell featured-preview">
         <div className="section-heading">
-          <p className="fine-label">Featured standard models</p>
-          <h2>Clear starting points, custom-finished around your room.</h2>
+          <p className="fine-label">Featured models</p>
+          <h2>Start with a model. Make it yours.</h2>
           <p>
-            These models give the quote conversation a real foundation. Choose a
-            direction, add the details that matter, and send the idea list.
+            Compare styles and starting prices, then choose the finishes and
+            add-ons that fit your space. Send us your selections for a quote.
           </p>
         </div>
         <ProductGallery items={featuredItems.slice(0, 4)} />
@@ -69,14 +69,14 @@ export default function Home() {
         </div>
         <div className="discovery-band__copy">
           <p className="fine-label">Discovery</p>
-          <h2>Not everything should be sold like a shelf item.</h2>
+          <h2>Have something different in mind?</h2>
           <p>
-            Some walls need a measured quote. Some pieces need material samples.
-            Some rooms just need a grown conversation about how people gather
-            there. That is where the custom lane lives.
+            Bring your ideas, reference photos, and room details. We’ll help
+            you work through the layout, materials, and installation needs
+            for a custom design.
           </p>
           <Link href="/discover" className="stone-button">
-            Explore Custom Direction
+            Explore custom designs
           </Link>
         </div>
       </RevealSection>
@@ -85,7 +85,7 @@ export default function Home() {
         <div className="section-heading section-heading--wide">
           <p className="fine-label">More than media walls</p>
           <h2>
-            Leave room for every fire-led centerpiece this brand can become.
+            Explore fireplaces, finishes, and more.
           </h2>
         </div>
         <div className="option-grid">
@@ -107,10 +107,10 @@ export default function Home() {
               <h3>{option.title}</h3>
               <p>{option.summary}</p>
               {option.status === "soon" ? (
-                <span className="soon-chip">Feature soon available</span>
+                <span className="soon-chip">Coming soon</span>
               ) : (
                 <a href="#estimate" className="text-link">
-                  Request direction
+                  Ask about options
                 </a>
               )}
             </article>
@@ -121,21 +121,20 @@ export default function Home() {
       <RevealSection className="section-shell investor-section" delay={150}>
         <div className="investor-section__heading">
           <p className="fine-label">Developers &amp; real estate investors</p>
-          <h2>Design decisions made with the return in mind.</h2>
+          <h2>A finished focal point for your next property.</h2>
           <p>
-            Turn an ordinary room into a stronger selling or leasing moment
-            with a feature buyers can see immediately. Metro helps development
-            teams plan the scope, control the finish package, and repeat the
-            right design across one property or an entire portfolio.
+            Give buyers and renters a room they can picture living in. Metro
+            helps you plan media walls, choose finishes, and coordinate
+            installation for one property or multiple units.
           </p>
           <a href="#developers" className="stone-button">
-            Discuss a Development
+            Discuss your project
           </a>
         </div>
         <div className="investor-value-grid">
           <article>
             <span>01</span>
-            <h3>Stronger market appeal</h3>
+            <h3>Make the room stand out</h3>
             <p>
               Create a finished focal point that photographs well and helps a
               listing stand apart.
@@ -143,15 +142,15 @@ export default function Home() {
           </article>
           <article>
             <span>02</span>
-            <h3>Controlled project scope</h3>
+            <h3>Define the scope early</h3>
             <p>
-              Start with repeatable models, defined options, and measured
-              planning before installation begins.
+              Choose models, finishes, and upgrades before installation
+              begins, with a scope built around your property.
             </p>
           </article>
           <article>
             <span>03</span>
-            <h3>Portfolio-ready execution</h3>
+            <h3>Plan across properties</h3>
             <p>
               Coordinate design, materials, and installation for a single
               renovation or multiple units.
@@ -163,11 +162,11 @@ export default function Home() {
       <RevealSection className="section-shell network-section" delay={160}>
         <div className="network-section__copy">
           <p className="fine-label">Installer network</p>
-          <h2>Best in show is not just a trophy. It is proof of craft.</h2>
+          <h2>Good work deserves to be seen.</h2>
           <p>
-            As the team grows, Metro can route client work to trusted
-            contractors and spotlight the best installs through Metro-powered
-            social contests, reveal reels, and monthly recognition.
+            We’re building a network of skilled installers who take pride in
+            their finish and their service. Apply for partner pricing,
+            installation opportunities, and recognition for standout work.
           </p>
         </div>
         <div className="network-card">
@@ -198,14 +197,13 @@ export default function Home() {
           height={101}
           style={{ width: "11.25rem", height: "auto" }}
         />
-        <h2>Metro first, coordinated from design through installation.</h2>
+        <h2>Let’s plan your media wall.</h2>
         <p>
-          The customer sees one clear Metro experience while the installation
-          network, contractor notes, and project routing stay organized behind
-          the scenes.
+          Tell us about your room and what you have in mind. We’ll help you
+          choose a design, review the details, and plan the installation.
         </p>
         <a href="#estimate" className="stone-button">
-          Start an Estimate
+          Request an estimate
         </a>
       </RevealSection>
 
