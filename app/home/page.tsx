@@ -128,7 +128,7 @@ export default function Home() {
             teams plan the scope, control the finish package, and repeat the
             right design across one property or an entire portfolio.
           </p>
-          <a href="#estimate" className="stone-button">
+          <a href="#developers" className="stone-button">
             Discuss a Development
           </a>
         </div>

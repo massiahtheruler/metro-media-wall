@@ -5,6 +5,7 @@ import FireplaceOffer from "@/components/FireplaceOffer";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import {
@@ -15,19 +16,25 @@ import {
   navItems,
 } from "@/lib/catalog";
 import { contractorProgram } from "@/lib/contractorProgram";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 interface ExperienceProps {
   children: React.ReactNode;
 }
 
 export function SiteShell({ children }: ExperienceProps) {
+  const pathname = usePathname();
   const [estimateOpen, setEstimateOpen] = useState(false);
   const [contractorOpen, setContractorOpen] = useState(false);
+  const [investorOpen, setInvestorOpen] = useState(false);
 
   useEffect(() => {
     const openFromHash = () => {
       if (window.location.hash === "#estimate") {
         setEstimateOpen(true);
+        window.history.replaceState(null, "", window.location.pathname);
+      } else if (window.location.hash === "#developers") {
+        setInvestorOpen(true);
         window.history.replaceState(null, "", window.location.pathname);
       }
     };
@@ -88,6 +95,11 @@ export function SiteShell({ children }: ExperienceProps) {
       >
         Contractors
       </button>
+      {pathname === "/" ? (
+        <Link href="/home" className="site-entry-fab">
+          Enter Site <span aria-hidden="true">→</span>
+        </Link>
+      ) : null}
       <EstimateModal
         isOpen={estimateOpen}
         onClose={() => setEstimateOpen(false)}
@@ -95,6 +107,10 @@ export function SiteShell({ children }: ExperienceProps) {
       <ContractorModal
         isOpen={contractorOpen}
         onClose={() => setContractorOpen(false)}
+      />
+      <InvestorModal
+        isOpen={investorOpen}
+        onClose={() => setInvestorOpen(false)}
       />
     </>
   );
@@ -359,7 +375,7 @@ export function EstimateModal({
       const body = Array.from(formData.entries())
         .map(([key, value]) => `${key}: ${value}`)
         .join("\n");
-      window.location.href = `mailto:hello@metromediawalls.com?subject=${encodeURIComponent(
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
         `Metro Media Walls estimate request: ${activeItem.title}`,
       )}&body=${encodeURIComponent(body)}`;
       return;
@@ -389,6 +405,7 @@ export function EstimateModal({
           <h2>{activeItem.title}</h2>
           <p>{activeItem.summary}</p>
           <input type="hidden" name="selected_model" value={activeItem.title} />
+          <input type="hidden" name="to_email" value={CONTACT_EMAIL} />
           <input type="hidden" name="selected_range" value={activeItem.price} />
           <input type="hidden" name="selected_addons" value={selectedAddOns.join(", ")} />
           <div className="estimate-total">
@@ -521,7 +538,7 @@ export function ContractorModal({
       const body = Array.from(formData.entries())
         .map(([key, value]) => `${key}: ${value}`)
         .join("\n");
-      window.location.href = `mailto:hello@metromediawalls.com?subject=${encodeURIComponent(
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
         "Metro installation network signup",
       )}&body=${encodeURIComponent(body)}`;
       return;
@@ -582,6 +599,7 @@ export function ContractorModal({
           </div>
           <p className="modal-description">{contractorProgram.closing}</p>
           <input type="hidden" name="signup_type" value="Contractor network" />
+          <input type="hidden" name="to_email" value={CONTACT_EMAIL} />
           <input
             type="hidden"
             name="contractor_discounts"
@@ -628,6 +646,165 @@ export function ContractorModal({
   );
 }
 
+export function InvestorModal({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  const [shouldRender, setShouldRender] = useState(isOpen);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "fallback">("idle");
+
+  useEffect(() => {
+    if (isOpen) {
+      // This local render flag preserves the stone-panel exit animation.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setShouldRender(true);
+      setStatus("idle");
+      return;
+    }
+    const timeout = window.setTimeout(() => setShouldRender(false), 520);
+    return () => window.clearTimeout(timeout);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!shouldRender) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [shouldRender]);
+
+  if (!shouldRender || typeof document === "undefined") return null;
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus("fallback");
+      const body = Array.from(new FormData(form).entries())
+        .map(([key, value]) => `${key}: ${value}`)
+        .join("\n");
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+        "Metro developer and investor inquiry",
+      )}&body=${encodeURIComponent(body)}`;
+      return;
+    }
+
+    setStatus("sending");
+    try {
+      await emailjs.sendForm(serviceId, templateId, form, { publicKey });
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("fallback");
+    }
+  };
+
+  return createPortal(
+    <div className="modal-stage" role="dialog" aria-modal="true" aria-label="Developer and real estate investor inquiry">
+      <button className={`modal-scrim ${isOpen ? "is-open" : "is-closing"}`} onClick={onClose} aria-label="Close developer inquiry form" />
+      <form className="modal-book investor-book" onSubmit={handleSubmit}>
+        <section className={`modal-slab investor-summary ${isOpen ? "stone-left-in" : "stone-left-out"}`}>
+          <button type="button" className="close-button close-button--first-panel" onClick={onClose} aria-label="Close developer inquiry form">
+            x
+          </button>
+          <p className="fine-label">Development partnerships</p>
+          <h2>Build the feature buyers remember.</h2>
+          <p>
+            Metro helps developers and investors turn feature walls into a
+            repeatable property upgrade with clear design direction, measured
+            planning, and coordinated installation.
+          </p>
+          <div className="investor-modal-points">
+            <span>Portfolio and multi-unit planning</span>
+            <span>Defined models, options, and finish packages</span>
+            <span>Design-to-install coordination</span>
+          </div>
+          <p className="investor-direct-contact">
+            Prefer email? <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </p>
+        </section>
+        <section className={`modal-slab estimate-form investor-form ${isOpen ? "stone-right-in" : "stone-right-out"}`}>
+          <div className="modal-head">
+            <div>
+              <p className="fine-label">Project intake</p>
+              <h2>Tell us what you&apos;re building.</h2>
+            </div>
+            <button type="button" className="close-button" onClick={onClose} aria-label="Close developer inquiry form">
+              x
+            </button>
+          </div>
+          <input type="hidden" name="inquiry_type" value="Developer or real estate investor" />
+          <input type="hidden" name="to_email" value={CONTACT_EMAIL} />
+          <div className="form-grid">
+            <label>
+              Name
+              <input name="name" required autoComplete="name" placeholder="Your name" />
+            </label>
+            <label>
+              Company
+              <input name="company" autoComplete="organization" placeholder="Company or portfolio" />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" required autoComplete="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              Phone
+              <input name="phone" autoComplete="tel" placeholder="Best number" />
+            </label>
+            <label>
+              Property type
+              <select name="property_type" defaultValue="Single-family development">
+                <option>Single-family development</option>
+                <option>Multi-family property</option>
+                <option>Fix and flip</option>
+                <option>Rental portfolio</option>
+                <option>Commercial or hospitality</option>
+              </select>
+            </label>
+            <label>
+              Number of units
+              <input name="unit_count" inputMode="numeric" placeholder="1, 12, 50..." />
+            </label>
+            <label>
+              Project market
+              <input name="project_market" required placeholder="City and state" />
+            </label>
+            <label>
+              Timeline
+              <select name="timeline" defaultValue="Planning now">
+                <option>Planning now</option>
+                <option>Within 30 days</option>
+                <option>1-3 months</option>
+                <option>3-6 months</option>
+                <option>Future pipeline</option>
+              </select>
+            </label>
+          </div>
+          <label className="message-field">
+            Project goals
+            <textarea name="message" rows={4} required placeholder="Tell us about the property, scope, finish level, and what success looks like." />
+          </label>
+          <button className="stone-button" type="submit" disabled={status === "sending"}>
+            {status === "sending" ? "Sending..." : "Request a Development Call"}
+          </button>
+          {status === "sent" && <p className="form-note">Inquiry sent. We&apos;ll follow up about the project.</p>}
+          {status === "fallback" && <p className="form-note">An email draft opened so you can send the inquiry directly.</p>}
+        </section>
+      </form>
+    </div>,
+    document.body,
+  );
+}
+
 function Footer({ onEstimate }: { onEstimate: () => void }) {
   const scrollHome = () => {
     if (typeof window !== "undefined") {
@@ -662,10 +839,10 @@ function Footer({ onEstimate }: { onEstimate: () => void }) {
             <FooterIcon kind="facebook" />
             Facebook
           </button>
-          <button type="button" className="footer-link">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="footer-link">
             <FooterIcon kind="contact" />
             Contact
-          </button>
+          </a>
         </nav>
       </div>
       <button className="stone-button" onClick={onEstimate}>

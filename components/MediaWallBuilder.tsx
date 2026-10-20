@@ -16,6 +16,7 @@ import {
   formatEstimatePrice,
   getBuilderProofProject,
 } from "@/lib/mediaWallBuilder";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 const defaultOptionIds: BuilderOptionId[] = ["soundbar"];
 const trustPoints = [
@@ -101,7 +102,7 @@ export default function MediaWallBuilder() {
       const body = Array.from(formData.entries())
         .map(([key, value]) => `${key}: ${value}`)
         .join("\n");
-      window.location.href = `mailto:hello@metromediawalls.com?subject=${encodeURIComponent(
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
         `Metro Media Walls exact quote request: ${selectedModel.name}`,
       )}&body=${encodeURIComponent(body)}`;
       return;
@@ -299,6 +300,7 @@ export default function MediaWallBuilder() {
             name="selected_model"
             value={selectedModel.name}
           />
+          <input type="hidden" name="to_email" value={CONTACT_EMAIL} />
           <input
             type="hidden"
             name="selected_options"
